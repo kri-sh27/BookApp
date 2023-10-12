@@ -1,20 +1,5 @@
 version: "3.8"
 services:
-  react_app:
-    container_name: react_app
-    image: react_app_template
-    build: ./BookFrontend
-    ports:
-      - "3008:3008"
-
-  nest_app:
-    container_name: nest_app
-    image: nest_server_template
-    build: ./BookBackend
-    ports:
-      - "3000:3000"
-    depends_on: 
-      - mysql_db
 
   mysql_db:
     container_name: mysql_db
@@ -26,3 +11,19 @@ services:
       MYSQL_DATABASE: bookdb
       MYSQL_USER: root
       MYSQL_PASSWORD: root
+
+  nest_app:
+    container_name: nest_app
+    image: nest_server_template
+    build: ./BookBackend
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - mysql_db
+
+  react_app:
+    container_name: react_app
+    image: react_app_template
+    build: ./BookFrontend
+    ports:
+      - "3008:3008"
