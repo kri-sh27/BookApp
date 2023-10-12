@@ -12,6 +12,8 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
     command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - new
 
   nest_app:
     container_name: nest_app
@@ -21,6 +23,8 @@ services:
       - "3000:3000"
     depends_on: 
       - mysql_db
+    networks:
+      - new
 
   react_app:
     container_name: react_app
@@ -28,3 +32,7 @@ services:
     build: ./BookFrontend
     ports:
       - "3008:3008"
+    networks:
+      - new
+  networks:
+  new:
