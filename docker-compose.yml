@@ -14,12 +14,11 @@ services:
     ports:
       - "3008:3008"
     depends_on: 
-      - mysql
+      - mysql_db
 
   mysql_db:
     container_name: mysql_db
     image: mysql
-    build: ./BookFrontend
     ports:
       - "3306:3306"
     environment:
@@ -27,4 +26,3 @@ services:
       MYSQL_DATABASE: bookdb
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-
