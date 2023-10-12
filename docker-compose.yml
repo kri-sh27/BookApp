@@ -3,14 +3,14 @@ services:
   react_app:
     container_name: react_app
     image: react_app_template
-    build: ./BookBackend
+    build: ./BookFrontend
     ports:
       - "3000:3000"
 
   nest_app:
     container_name: nest_app
     image: nest_server_template
-    build: ./BookFrontend
+    build: ./BookBackend
     ports:
       - "3008:3008"
     depends_on: 
