@@ -10,7 +10,7 @@ import { BookModule } from './book/book.module';
     TypeOrmModule.forRoot({
       type: 'mysql',
       // host: 'bookdb.cv7i1vrai572.ap-south-1.rds.amazonaws.com',
-      host: 'localhost',
+      host: 'mysql_db',
       // port: 3008,
       port: 3306,
       // username: 'admin',
