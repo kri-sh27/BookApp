@@ -12,7 +12,7 @@ import { BookModule } from './book/book.module';
       // host: 'bookdb.cv7i1vrai572.ap-south-1.rds.amazonaws.com',
       host: 'localhost',
       // port: 3008,
-      port: 3307,
+      port: 3306,
       // username: 'admin',
       username: 'root',
       // password: 'Rahulmore121',
