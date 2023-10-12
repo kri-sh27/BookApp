@@ -17,7 +17,6 @@ services:
 
   nest_app:
     container_name: nest_app
-    image: nest_server_template
     build: ./BookBackend
     ports:
       - "3000:3000"
@@ -28,11 +27,11 @@ services:
 
   react_app:
     container_name: react_app
-    image: react_app_template
     build: ./BookFrontend
     ports:
       - "3008:3008"
     networks:
       - new
-  networks:
+
+networks:
   new:
