@@ -6,10 +6,11 @@ RUN npm i npm@latest -g
 
 COPY package*.json ./
 
-RUN npm install 
+RUN npm install -y wait-for-it
 
 WORKDIR /app
 
 COPY . .
 
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
+CMD ["wait-for-it", "mysql_db:3306", "--", "npm", "start"]
