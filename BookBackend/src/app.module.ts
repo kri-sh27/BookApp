@@ -21,6 +21,8 @@ import { BookModule } from './book/book.module';
       entities: [Book],
       synchronize: true,
       autoLoadEntities: true,
+      retryDelay: 1000, // Delay in milliseconds before retrying the connection
+      // maxRetryAttempts: 10, // Maximum number of retry attempts
       
     }),
     BookModule,
