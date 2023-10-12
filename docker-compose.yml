@@ -5,14 +5,14 @@ services:
     image: react_app_template
     build: ./BookFrontend
     ports:
-      - "3000:3000"
+      - "3008:3008"
 
   nest_app:
     container_name: nest_app
     image: nest_server_template
     build: ./BookBackend
     ports:
-      - "3008:3008"
+      - "3000:3000"
     depends_on: 
       - mysql_db
 
